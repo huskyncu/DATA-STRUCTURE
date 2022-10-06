@@ -21,34 +21,12 @@ void Selection_sort(vector<Data> student_group,int num)
             {
                 max=j;
             }
+            else if(student_group[j].score==student_group[max].score && student_group[j].first_order<student_group[max].first_order)
+            {
+            	max=j;
+			}
         }
         swap(student_group[i],student_group[max]);
-    }
-    for(int i=0; i<num; i++)
-    {
-        int y=0;
-        for(int j=i+1; j<num; j++)
-        {
-            if(student_group[i].score==student_group[j].score)
-            {
-                y++;
-            }
-            if(y>0 || student_group[i].score!=student_group[j].score)
-            {
-                for(int f=i; f<i+y; f++)
-                {
-                    min=f;
-                    for(int g=f+1; g<i+y+1; g++)
-                    {
-                        if(student_group[g].first_order<student_group[min].first_order)
-                        {
-                            min=g;
-                        }
-                    }
-                    swap(student_group[f],student_group[min]);
-                }
-            }
-        }
     }
     for(int i=0; i<num; i++)
     {
